@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp1
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+string filePath = @&quot;путь к файлу&quot;;
+StreamReader reader = new StreamReader(filePath);
+string input = reader.ReadToEnd();
+reader.Close();
+Console.WriteLine(&quot;Количество символов: &quot; + input.Length);
+string[] lines = input.Split(new string[] { Environment.NewLine },
+StringSplitOptions.RemoveEmptyEntries);
+Console.WriteLine(&quot;Количество строк: &quot; + lines.Length);
+}
+}
+}
